@@ -1,0 +1,13 @@
+.productCard {
+  width: 13.125rem;
+  .cardMeta {
+    & > div:first-child {
+      div:not(:last-child){
+        margin-bottom: 0;
+      }
+    } 
+  } 
+  .price {
+    margin-top: 0.625rem;
+  }
+}

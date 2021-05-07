@@ -1,0 +1,8 @@
+@import "../../variables.module.scss";
+
+.siderStyles {
+  min-width: 15.625rem;
+  border-right: 0.063rem solid $light-grey;
+  border-top: 0.063rem solid $light-grey;
+  background: $white;  
+}

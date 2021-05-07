@@ -1,0 +1,36 @@
+//Colors
+$light-grey: #e9e9ed; 
+$black: #000000;
+$pink: #ff3f6c;
+$white: #ffffff;
+$grey: #535766;
+
+:export {
+    lightGrey: $grey;
+    grey: $grey;
+    black: $black;
+    pink: $pink;
+  }
+
+
+//Font Sizes
+$title-size: 1rem;
+$subtitle-size: 0.875rem;
+$text-size: 0.75rem;
+
+:export {
+  titleSize: $title-size;
+  subtitleSize: $subtitle-size;
+  textSize: $text-size;
+  }
+
+//Font Weights
+$regular-font: 400;
+$medium-font: 500;
+$bold-font: 600;
+
+:export {
+  regularFont: $regular-font;
+  mediumFont: $medium-font;
+  boldFont: $bold-font;
+  }

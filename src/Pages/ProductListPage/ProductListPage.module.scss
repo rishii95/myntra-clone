@@ -1,0 +1,23 @@
+@import "../../Common/variables.module.scss";
+
+.contentWrapper {
+  padding: 2rem 6rem;
+  background: $white;
+  .titleLayout {
+    background: $white;
+    .titleSider {
+      padding-left: 1.563rem;
+    }
+  }
+  .layout {
+    padding: 1rem 0;
+    background: $white;
+    display: flex;
+    flex-direction: row;
+    .content {
+      padding: 1.5rem 0;
+      border-top: 0.063rem solid $light-grey;
+      min-height: 17.5rem;
+    }
+  }
+}
