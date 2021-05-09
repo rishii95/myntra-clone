@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { PropTypes } from 'prop-types';
 import _map from 'lodash/map';
+import _get from 'lodash/get';
 
 import ProductCard from '../../Components/ProductCard';
 import Typography from '../../../../Common/Components/Typography';
@@ -22,11 +23,11 @@ export default function Grid({
 
   const getCards = () => _map(cardData, (item) => (
     <ProductCard
-      keyValue={item.id}
-      title={<Typography ellipsis type="title">{item.name}</Typography>}
-      desc={<Typography ellipsis type="subtitle" color={variables.grey}>{item.desc}</Typography>}
-      price={Number(item.price)}
-      image={item.avatar}
+      keyValue={_get(item, 'id', '')}
+      title={<Typography ellipsis type="title">{_get(item, 'name', '')}</Typography>}
+      desc={<Typography ellipsis type="subtitle" color={variables.grey}>{_get(item, 'desc', '')}</Typography>}
+      price={Number(_get(item, 'price', null))}
+      image={_get(item, 'avatar', '')}
       onImageLoad={onImageLoad}
       imageLoading={imageLoading}
     />
@@ -41,6 +42,7 @@ Grid.propTypes = {
     name: PropTypes.string,
     desc: PropTypes.string,
     avatar: PropTypes.string,
+    price: PropTypes.string,
     id: PropTypes.string,
   })).isRequired,
 };

@@ -11,6 +11,14 @@ export const fetchProductList = async (page) => {
   return data;
 };
 
-export const fetchFilters = () => {
-
+export const getFilteredList = async (queryString) => {
+  const url = `https://609280e585ff510017212f6e.mockapi.io/api/v1/products?${queryString}`;
+  let data;
+  try {
+    const response = await fetch(url);
+    data = await response.json();
+  } catch (error) {
+    // Add Toaster
+  }
+  return data;
 };

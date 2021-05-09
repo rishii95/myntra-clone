@@ -1,6 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import _map from 'lodash/map';
+import _get from 'lodash/get';
 
 import FilterGroup from '../../Components/FilterGroup';
 
@@ -10,7 +11,7 @@ export default function SidebarFilters({
   filterData,
 }) {
   const getFilters = () => _map(filterData, (item, index) => (
-    <FilterGroup key={index} title={item.type} filterValues={item.filterValues} />
+    <FilterGroup key={index} title={_get(item, 'type', '')} filterValues={_get(item, 'filterValues', [])} />
   ));
 
   return (
@@ -21,6 +22,10 @@ export default function SidebarFilters({
 SidebarFilters.propTypes = {
   filterData: PropTypes.arrayOf(PropTypes.shape({
     type: PropTypes.string,
-    filterValues: PropTypes.arrayOf(PropTypes.string),
+    filterValues: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+
+    })),
   })).isRequired,
 };
