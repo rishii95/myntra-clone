@@ -10,7 +10,7 @@ import Sider from '../../Common/Components/Sider';
 import Grid from './Containers/Grid';
 import SidebarFilters from './Containers/SidebarFilters';
 
-import { fetchProductListData, getFilteredListData } from '../../Redux/Actions';
+import { fetchProductListData, getFilteredListData, getSearchListData } from '../../Redux/Actions';
 
 import styles from './ProductListPage.module.scss';
 
@@ -32,6 +32,8 @@ export default function ProductListPage() {
   useEffect(() => {
     if (_isEmpty(params)) {
       dispatch(fetchProductListData(1));
+    } else if (Object.prototype.hasOwnProperty.call(params, 'search')) {
+      dispatch(getSearchListData(queryString.stringify(params)));
     } else {
       dispatch(getFilteredListData(queryString.stringify(params)));
     }

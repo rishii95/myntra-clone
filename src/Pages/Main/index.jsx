@@ -12,9 +12,7 @@ import styles from './Main.module.scss';
 export default function Main() {
   return (
     <Layout className={styles.layout}>
-      <Header>
-        <div className="logo" />
-      </Header>
+      <Header />
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
