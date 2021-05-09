@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { PropTypes } from 'prop-types';
 import _map from 'lodash/map';
 
@@ -11,12 +11,24 @@ import styles from './Grid.module.scss';
 export default function Grid({
   cardData,
 }) {
-  const getCards = () => _map(cardData, (item, index) => (
+  const [imageLoading, setLoading] = useState(true);
+  const counter = useRef(0);
+  const onImageLoad = () => {
+    counter.current += 1;
+    if (counter.current >= cardData.length) {
+      setLoading(false);
+    }
+  };
+
+  const getCards = () => _map(cardData, (item) => (
     <ProductCard
-      key={index}
-      title={<Typography type="title">{item.title}</Typography>}
-      desc={<Typography type="subtitle" color={variables.grey}>{item.subtitle}</Typography>}
-      price={20}
+      keyValue={item.id}
+      title={<Typography ellipsis type="title">{item.name}</Typography>}
+      desc={<Typography ellipsis type="subtitle" color={variables.grey}>{item.desc}</Typography>}
+      price={Number(item.price)}
+      image={item.avatar}
+      onImageLoad={onImageLoad}
+      imageLoading={imageLoading}
     />
   ));
   return (
@@ -25,8 +37,10 @@ export default function Grid({
 }
 
 Grid.propTypes = {
-  cardData: PropTypes.shape({
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-  }).isRequired,
+  cardData: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    desc: PropTypes.string,
+    avatar: PropTypes.string,
+    id: PropTypes.string,
+  })).isRequired,
 };

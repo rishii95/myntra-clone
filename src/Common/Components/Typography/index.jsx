@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { Typography as TypographyAnt } from 'antd';
@@ -9,7 +10,7 @@ import TypographyStyles from './Typography.module.scss';
 const { Title, Paragraph, Text } = TypographyAnt;
 
 export default function Typography({
-  children, type, color, weight, className, marginBottom,
+  children, type, color, weight, className, marginBottom, ...props
 }) {
   const getStyles = () => ({ marginBottom, color, fontWeight: weight });
   const getElement = () => {
@@ -20,6 +21,7 @@ export default function Typography({
             level={5}
             style={{ ...getStyles(), fontWeight: variables.boldFont }}
             className={className}
+            {...props}
           >
             {children}
           </Title>
@@ -29,6 +31,7 @@ export default function Typography({
           <Paragraph
             className={`${TypographyStyles.subtitle} ${className}`}
             style={getStyles()}
+            {...props}
           >
             {children}
           </Paragraph>
@@ -38,6 +41,7 @@ export default function Typography({
           <Text
             className={`${TypographyStyles.text} ${className}`}
             style={getStyles()}
+            {...props}
           >
             {children}
           </Text>

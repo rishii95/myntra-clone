@@ -18,6 +18,9 @@
       padding: 1.5rem 0;
       border-top: 0.063rem solid $light-grey;
       min-height: 17.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

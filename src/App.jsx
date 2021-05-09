@@ -1,17 +1,19 @@
 import React from 'react';
-// import Typography from './Common/Components/Typography';
-// import Price from './Common/Components/Price';
-// import TextButton from './Common/Components/TextButton';
+
+import { Provider } from 'react-redux';
+import Store from './Redux/store';
+
 import Main from './Pages/Main';
-// import variables from './Common/variables.module.scss';
 import 'antd/dist/antd.css';
 import './App.module.scss';
 
 function App() {
   return (
-    <div className="App">
-      <Main />
-    </div>
+    <Provider store={Store}>
+      <div className="App">
+        <Main />
+      </div>
+    </Provider>
   );
 }
 
