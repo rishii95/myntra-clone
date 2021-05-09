@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import { Card, Skeleton } from 'antd';
+import { Card } from 'antd';
 
 import Price from '../../../../Common/Components/Price';
+import Shimmer from '../../../../Common/Components/Shimmer';
 
 import styles from './ProductCard.module.scss';
 
@@ -19,20 +20,14 @@ export default function ProductCard({
       key={keyValue}
       cover={(
         <>
-          <Skeleton loading={imageLoading} active size={210} />
-          {/* <Skeleton active={imageLoading} size={210} /> */}
+          <Shimmer loading={imageLoading} size={210} />
           <img
             alt="product"
             style={{ visibility: imageLoading ? 'hidden' : 'visible' }}
             src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/16/66a74f48-2904-41d1-9832-f7f16da828921615899987024-1.jpg"
             onLoad={onImageLoad}
+            // src={image}
           />
-          {/* <img
-            alt="product"
-            style={{ visibility: imageLoading ? 'hidden' : 'visible' }}
-            onLoad={onImageLoad}
-            src={image}
-          /> */}
         </>
 )}
     >
