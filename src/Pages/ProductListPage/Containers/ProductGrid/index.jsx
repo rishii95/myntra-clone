@@ -7,9 +7,9 @@ import ProductCard from '../../Components/ProductCard';
 import Typography from '../../../../Common/Components/Typography';
 
 import variables from '../../../../Common/variables.module.scss';
-import styles from './Grid.module.scss';
+import styles from './ProductGrid.module.scss';
 
-export default function Grid({
+export default function ProductGrid({
   cardData,
 }) {
   const [imageLoading, setLoading] = useState(true);
@@ -37,7 +37,7 @@ export default function Grid({
   );
 }
 
-Grid.propTypes = {
+ProductGrid.propTypes = {
   cardData: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
     desc: PropTypes.string,

@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 import Loader from '../../Common/Components/Loader';
 import Typography from '../../Common/Components/Typography';
 import Sider from '../../Common/Components/Sider';
-import Grid from './Containers/Grid';
+import ProductGrid from './Containers/ProductGrid';
 import SidebarFilters from './Containers/SidebarFilters';
 
 import { fetchProductListData, getFilteredListData, getSearchListData } from '../../Redux/Actions';
@@ -65,7 +65,7 @@ export default function ProductListPage() {
           />
         </Sider>
         <Content className={styles.content}>
-          {_isEmpty(productList) ? <Loader /> : <Grid cardData={productList} />}
+          {_isEmpty(productList) ? <Loader /> : <ProductGrid cardData={productList} />}
         </Content>
       </Layout>
     </Content>
