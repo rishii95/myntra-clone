@@ -1,5 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useState } from 'react';
+import { useHistory, withRouter } from 'react-router-dom';
+
 import _get from 'lodash/get';
 import {
   SearchOutlined,
@@ -7,8 +9,9 @@ import {
 import styles from './SearchBox.module.scss';
 import variables from '../../variables.module.scss';
 
-export default function SearchBox() {
+function SearchBox() {
   const [query, setQuery] = useState('');
+  const history = useHistory();
   const aEl = useRef(null);
 
   return (
@@ -25,11 +28,12 @@ export default function SearchBox() {
         />
       </a>
       <input
-        placeholder="Search for products"
+        placeholder="Search for all products"
         type="search"
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
-            aEl.current.click();
+            // aEl.current.click();
+            history.push(`products?search=${query}`);
           }
         }}
         onChange={(e) => setQuery(_get(e, 'target.value', ''))}
@@ -40,3 +44,4 @@ export default function SearchBox() {
     </div>
   );
 }
+export default withRouter(SearchBox);

@@ -12,8 +12,8 @@ import styles from './Main.module.scss';
 export default function Main() {
   return (
     <Layout className={styles.layout}>
-      <Header />
       <BrowserRouter>
+        <Header />
         <Switch>
           <Route exact path="/">
             <Redirect to="/products" />

@@ -5,7 +5,7 @@ import Store from './Redux/store';
 
 import Main from './Pages/Main';
 import 'antd/dist/antd.css';
-import './App.module.scss';
+import './App.scss';
 
 function App() {
   return (

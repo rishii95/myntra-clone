@@ -11,7 +11,7 @@ export default function SidebarFilters({
   filterData,
 }) {
   const getFilters = () => _map(filterData, (item, index) => (
-    <FilterGroup key={index} title={_get(item, 'type', '')} filterValues={_get(item, 'filterValues', [])} />
+    <FilterGroup key={index} type={_get(item, 'type', '')} filterValues={_get(item, 'filterValues', [])} />
   ));
 
   return (
