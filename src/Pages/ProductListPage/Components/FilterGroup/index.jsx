@@ -46,6 +46,18 @@ const getValue = (keys, item) => {
   }
   return [item.name];
 };
+
+const getFilterValue = (type, item) => {
+  if (type === 'Color') {
+    return (
+      <div className={styles.checboxValueWrapper}>
+        {item.name}
+        <span className={styles.colorIcon} style={{ backgroundColor: item.colorCode }} />
+      </div>
+    );
+  }
+  return item.name;
+};
 export default function FilterGroup({
   type, filterValues,
 }) {
@@ -104,7 +116,7 @@ export default function FilterGroup({
         checked={_includes(_isArray(params.filterIDs)
           ? params.filterIDs : [params.filterIDs], _get(item, 'id', null))}
       >
-        {item.name}
+        {getFilterValue(type, item)}
       </Checkbox>
     </>
   ));

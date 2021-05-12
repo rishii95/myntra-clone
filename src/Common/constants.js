@@ -13,8 +13,10 @@ export const FILTERS = [
   {
     type: 'Color',
     filterValues: [
-      { name: 'violet', id: '6' }, { name: 'purple', id: '7' }, { name: 'white', id: '8' },
-      { name: 'lavender', id: '9' }, { name: 'yellow', id: '10' }, { name: 'grey', id: '11' },
+      { name: 'violet', id: '6', colorCode: '#EE82EE' }, { name: 'purple', id: '7', colorCode: '#800080' },
+      { name: 'salmon', id: '8', colorCode: '#FA8072' },
+      { name: 'lavender', id: '9', colorCode: '#E6E6FA' },
+      { name: 'yellow', id: '10', colorCode: '#FFFF00' }, { name: 'grey', id: '11', colorCode: '#808080' },
     ],
   },
 ];
