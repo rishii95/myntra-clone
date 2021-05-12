@@ -19,6 +19,9 @@ import styles from './FilterGroup.module.scss';
 
 const queryString = require('query-string');
 
+/* Mapping of filter name to be displayed with filter key name in the data
+  from the API. Ideally this should have come from backend only.
+*/
 const getKey = (type) => {
   switch (type) {
     case 'Department':
@@ -31,7 +34,9 @@ const getKey = (type) => {
       return '';
   }
 };
-
+/* query-string package is used which returns string for single key
+  and array for multiple so _isArray is used to handle all edge cases.
+*/
 const getValue = (keys, item) => {
   if (keys) {
     if (_isArray(keys)) {
@@ -55,6 +60,9 @@ export default function FilterGroup({
     <>
       <Checkbox
         onChange={(e) => {
+          /* All the filter key names and their ids are appended into the url and
+            the id is used to enable/disable the checkbox
+          */
           let keys = _get(params, `${getKey(type)}`, '');
           let filterIDs = _get(params, 'filterIDs', []);
           filterIDs = _isArray(filterIDs) ? filterIDs : [filterIDs];
