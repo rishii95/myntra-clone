@@ -6,6 +6,7 @@ import {
 
 import ProductListPage from '../ProductListPage';
 import Header from '../../Common/Components/Header';
+import Fallback from '../../Common/Components/Fallback';
 
 import styles from './Main.module.scss';
 
@@ -20,6 +21,9 @@ export default function Main() {
           </Route>
           <Route path="/products">
             <ProductListPage />
+          </Route>
+          <Route>
+            <Fallback state="404" />
           </Route>
         </Switch>
       </BrowserRouter>

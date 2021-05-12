@@ -7,6 +7,7 @@ const fetchProductList = async (page) => {
     data = await response.json();
   } catch (error) {
     // Add Toaster
+    throw error;
   }
   return data;
 };

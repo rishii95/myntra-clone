@@ -3,21 +3,20 @@ import { Layout } from 'antd';
 import _isEmpty from 'lodash/isEmpty';
 import _get from 'lodash/get';
 import _has from 'lodash/has';
-// import _keys from 'lodash/keys';
 import _size from 'lodash/size';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
-import Loader from '../../Common/Components/Loader';
 import Typography from '../../Common/Components/Typography';
 import Sider from '../../Common/Components/Sider';
+import Fallback from '../../Common/Components/Fallback';
 import ProductGrid from './Containers/ProductGrid';
 import SidebarFilters from './Containers/SidebarFilters';
 
 import { FILTERS, PAGE_SIZE, TOTAL_PAGES } from '../../Common/constants';
 import {
   fetchProductListData, getStoredProductData, getSearchResults, fetchDataAndGetSearchResults,
-  fetchDataAndFilterResults,
+  fetchDataAndFilterResults, fetchDataAndSearchAndFilterResults,
 } from '../../Redux/Actions';
 
 import styles from './ProductListPage.module.scss';
@@ -42,13 +41,18 @@ export default function ProductListPage() {
   const filterIDs = _get(params, 'filterIDs', '');
   const [currentPage, setCurentPage] = useState(1);
 
+  /* This is when the page is refreshed or loaded for the first time with either nothing or
+    search/filter query params attached to url
+  */
   useEffect(() => {
     if (_isEmpty(params)) {
       dispatch(fetchProductListData(1));
+    } else if (searchQuery && filterIDs) {
+      dispatch(fetchDataAndSearchAndFilterResults(1, params, productListData.searchedData));
     } else if (searchQuery) {
       dispatch(fetchDataAndGetSearchResults(1, params));
     } else {
-      dispatch(fetchDataAndFilterResults(1, params));
+      dispatch(fetchDataAndFilterResults(1, params, productListData.allData));
     }
   }, []);
 
@@ -59,12 +63,10 @@ export default function ProductListPage() {
     }
   }, [searchQuery]);
 
+  /* Change page number back to 1 once filtered data is created */
   useEffect(() => {
-    if (!_isEmpty(filterIDs) && currentPage !== 1) {
-      // dispatch(filterResults(params));
-      setCurentPage(1);
-    }
-  }, [filterIDs]);
+    setCurentPage(1);
+  }, [productListData.filteredData]);
 
   /* Reference Data can be either data after search or the API fetched data on which pagination
      and filters will be then applied
@@ -72,10 +74,11 @@ export default function ProductListPage() {
   const handlePagination = (page) => {
     setCurentPage(page);
     let referenceData = {};
-    if (searchQuery) {
-      referenceData = productListData.searchedData;
-    } else if (filterIDs) {
+    // This condition with filterIDs works for both - only filter or filter + search combined
+    if (filterIDs) {
       referenceData = productListData.filteredData;
+    } else if (searchQuery) {
+      referenceData = productListData.searchedData;
     } else {
       referenceData = productListData.allData;
     }
@@ -86,13 +89,37 @@ export default function ProductListPage() {
     }
   };
   const getTotalPages = () => {
+    // This condition with filterIDs works for both - only filter or filter + search combined
+    if (filterIDs) {
+      return _size(_get(productListData, 'filteredData', {})) * PAGE_SIZE;
+    }
     if (searchQuery) {
       return _size(_get(productListData, 'searchedData', {})) * PAGE_SIZE;
-    } if (filterIDs) {
-      return _size(_get(productListData, 'filteredData', {})) * PAGE_SIZE;
     }
     return TOTAL_PAGES;
   };
+
+  const getData = () => {
+    if (!productListData.currentData) {
+      return <Fallback state="Loading" />;
+    }
+    if (_isEmpty(productListData.currentData)) {
+      return <Fallback state="Empty" />;
+    }
+    return (
+      <>
+        <ProductGrid cardData={productListData.currentData} />
+        <div className={styles.paginationWrapper}>
+          <Pagination
+            current={currentPage}
+            onChange={handlePagination}
+            total={getTotalPages()}
+          />
+        </div>
+      </>
+    );
+  };
+
   return (
     <Content className={styles.contentWrapper}>
       <Layout className={styles.titleLayout}>
@@ -103,19 +130,7 @@ export default function ProductListPage() {
           <SidebarFilters filterData={FILTERS} />
         </Sider>
         <Content className={styles.content}>
-          {_isEmpty(productListData.currentData) ? <Loader />
-            : (
-              <>
-                <ProductGrid cardData={productListData.currentData} />
-                <div className={styles.paginationWrapper}>
-                  <Pagination
-                    current={currentPage}
-                    onChange={handlePagination}
-                    total={getTotalPages()}
-                  />
-                </div>
-              </>
-            )}
+          {getData()}
         </Content>
       </Layout>
     </Content>

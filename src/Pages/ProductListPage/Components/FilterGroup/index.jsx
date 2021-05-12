@@ -1,15 +1,13 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import _map from 'lodash/map';
 import _get from 'lodash/get';
 import _includes from 'lodash/includes';
-import _isEmpty from 'lodash/isEmpty';
 import _isArray from 'lodash/isArray';
 import _remove from 'lodash/remove';
 
 import { useHistory, useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { filterResults } from '../../../../Redux/Actions';
 
@@ -49,7 +47,9 @@ export default function FilterGroup({
   const history = useHistory();
   const location = useLocation();
   const params = queryString.parse(location.search, { arrayFormat: 'comma' });
+  const searchQuery = params.search;
   const dispatch = useDispatch();
+  const productListData = useSelector((state) => _get(state, 'productListReducer', {}));
 
   const getFilterValues = () => _map(filterValues, (item) => (
     <>
@@ -57,6 +57,8 @@ export default function FilterGroup({
         onChange={(e) => {
           let keys = _get(params, `${getKey(type)}`, '');
           let filterIDs = _get(params, 'filterIDs', []);
+          filterIDs = _isArray(filterIDs) ? filterIDs : [filterIDs];
+
           let updatedparams = { ...params };
           if (!e.target.checked) {
             if (!_isArray(keys)) {
@@ -78,17 +80,21 @@ export default function FilterGroup({
             updatedparams = {
               ...updatedparams,
               [getKey(type)]: getValue(keys, item),
-              filterIDs: [...filterIDs, ...item.id],
+              filterIDs: [...filterIDs, item.id],
             };
           }
 
           const qString = queryString.stringify(updatedparams, { arrayFormat: 'comma' });
-          // `${getKey(type)}=${item.name}&filterId=${item.id}`;
           history.push(`/products?${qString}`);
-          dispatch(filterResults(updatedparams));
+          if (searchQuery) {
+            dispatch(filterResults(updatedparams, productListData.searchedData));
+          } else {
+            dispatch(filterResults(updatedparams, productListData.allData));
+          }
         }}
         key={item.id}
-        checked={_includes(_get(params, 'filterIDs', []), _get(item, 'id', null))}
+        checked={_includes(_isArray(params.filterIDs)
+          ? params.filterIDs : [params.filterIDs], _get(item, 'id', null))}
       >
         {item.name}
       </Checkbox>

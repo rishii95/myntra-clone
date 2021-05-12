@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { PropTypes } from 'prop-types';
 import _map from 'lodash/map';
 import _get from 'lodash/get';
+import _upperFirst from 'lodash/upperFirst';
 
 import ProductCard from '../../Components/ProductCard';
 import Typography from '../../../../Common/Components/Typography';
@@ -25,7 +26,11 @@ export default function ProductGrid({
     <ProductCard
       keyValue={_get(item, 'id', '')}
       title={<Typography ellipsis type="title">{_get(item, 'name', '')}</Typography>}
-      desc={<Typography ellipsis type="subtitle" color={variables.grey}>{_get(item, 'desc', '')}</Typography>}
+      desc={(
+        <Typography type="subtitle" color={variables.grey} style={{ height: '2.625rem' }}>
+          {`${_upperFirst(_get(item, 'color', ''))} ${_get(item, 'desc', '')} in ${_get(item, 'dept', '')}`}
+        </Typography>
+)}
       price={Number(_get(item, 'price', null))}
       image={_get(item, 'avatar', '')}
       onImageLoad={onImageLoad}

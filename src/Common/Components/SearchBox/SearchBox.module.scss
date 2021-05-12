@@ -7,6 +7,7 @@
   position: relative;
   .searchBtn {
     display: inline-block;
+    cursor: pointer;
     height: 2.5rem;
     width: 2.5rem;
     display: flex;
@@ -27,9 +28,22 @@
     width: 100%;
     &:focus{
     outline: none;
-  } 
+  }
   background-color: $light-grey;
   border: 1px solid $light-grey;
   border-radius: 0  0.25rem  0.25rem 0;
+  } 
+  .closeIcon {
+    position: absolute;
+    right: 0.63rem;
+    border: none;
+    background-color: $light-grey;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      cursor: pointer;
+    }
   } 
 }

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-plusplus */
 import _get from 'lodash/get';
 import _has from 'lodash/has';
@@ -20,7 +19,7 @@ import { PAGE_SIZE } from '../../Common/constants';
 
 const initialState = {
   allData: {},
-  currentData: [],
+  currentData: null,
   searchedData: {},
   filteredData: {},
 };
@@ -75,13 +74,14 @@ const productListReducer = (state = initialState, action) => {
 
     case FILTER_RESULTS: {
       const filters = _get(action, 'payload.params', {});
-      const allData = _get(state, 'allData', {});
-      const allDataValues = _flatten(_values(allData));
+      const referenceData = _get(action, 'payload.referenceData', {});
+      const referenceDataValues = _flatten(_values(referenceData));
       delete filters.filterIDs;
+      delete filters.search;
       const filterKeys = _keys(filters);
       let page = 1;
 
-      const filteredData = _reduce(allDataValues, (result, data, key) => {
+      const filteredData = _reduce(referenceDataValues, (result, data) => {
         const updatedResult = { ...result };
 
         let flag = 0;

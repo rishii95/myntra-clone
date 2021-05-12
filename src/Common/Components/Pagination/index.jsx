@@ -2,7 +2,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { Pagination as PaginationAntd } from 'antd';
-// import variables from '../../variables.module.scss';
 import './Pagination.scss';
 import { PAGE_SIZE, TOTAL_PAGES } from '../../constants';
 
@@ -25,13 +24,4 @@ export default function Pagination({ total, onChange, ...rest }) {
 Pagination.propTypes = {
   total: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
-  // weight: PropTypes.string,
-  // color: PropTypes.string,
-  // size: PropTypes.string,
 };
-
-// Pagination.defaultProps = {
-//   weight: variables.mediumFont,
-//   color: variables.pink,
-//   size: variables.subtitleSize,
-// };

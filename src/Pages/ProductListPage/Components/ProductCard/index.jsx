@@ -20,7 +20,7 @@ export default function ProductCard({
       key={keyValue}
       cover={(
         <>
-          <Shimmer loading={imageLoading} size={210} />
+          <Shimmer loading={imageLoading} size={220} />
           <img
             alt="product"
             style={{ visibility: imageLoading ? 'hidden' : 'visible' }}
