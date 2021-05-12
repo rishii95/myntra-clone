@@ -22,10 +22,6 @@ export const getStoredProductData = (page, referenceData) => (dispatch) => (
     },
   })
 );
-export const fetchProductListData = (page) => async (dispatch) => {
-  const data = await fetchProductList(page);
-  await dispatch(setProductListData(data, page));
-};
 
 export const getSearchResults = (params) => (dispatch) => (
   dispatch({
@@ -36,21 +32,33 @@ export const getSearchResults = (params) => (dispatch) => (
   })
 );
 
-export const filterResults = (params) => (dispatch) => (
+export const filterResults = (params, referenceData) => (dispatch) => (
   dispatch({
     type: FILTER_RESULTS,
     payload: {
       params,
+      referenceData,
     },
   })
 );
 
-export const fetchDataAndGetSearchResults = (page, params) => async (dispatch) => {
-  await dispatch(fetchProductListData(page));
-  dispatch(getSearchResults(params));
+export const fetchProductListData = (page) => async (dispatch) => {
+  const data = await fetchProductList(page);
+  await dispatch(setProductListData(data, page));
 };
 
-export const fetchDataAndFilterResults = (page, params) => async (dispatch) => {
+export const fetchDataAndGetSearchResults = (page, params) => async (dispatch) => {
   await dispatch(fetchProductListData(page));
-  dispatch(filterResults(params));
+  await dispatch(getSearchResults(params));
+};
+
+export const fetchDataAndFilterResults = (page, params, referenceData) => async (dispatch) => {
+  await dispatch(fetchProductListData(page));
+  await dispatch(filterResults(params, referenceData));
+};
+
+// eslint-disable-next-line max-len
+export const fetchDataAndSearchAndFilterResults = (page, params, referenceData) => async (dispatch) => {
+  await dispatch(fetchDataAndGetSearchResults(page, params));
+  await dispatch(filterResults(params, referenceData));
 };
