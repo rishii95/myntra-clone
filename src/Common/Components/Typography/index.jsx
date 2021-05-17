@@ -19,6 +19,7 @@ export default function Typography({
         return (
           <Title
             level={5}
+            data-testid="typography-title"
             style={{ ...getStyles(), fontWeight: variables.boldFont }}
             className={className}
             {...props}
@@ -31,6 +32,7 @@ export default function Typography({
           <Paragraph
             className={`${TypographyStyles.subtitle} ${className}`}
             style={getStyles()}
+            data-testid="typography-subtitle"
             {...props}
           >
             {children}
@@ -40,6 +42,7 @@ export default function Typography({
         return (
           <Text
             className={`${TypographyStyles.text} ${className}`}
+            data-testid="typography-text"
             style={getStyles()}
             {...props}
           >

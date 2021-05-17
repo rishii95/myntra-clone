@@ -8,12 +8,12 @@ export default function TextButton({
 }) {
   const getStyles = () => ({ color, fontWeight: weight, fontSize: size });
   return (
-    <Button type="link" style={getStyles()}>{children}</Button>
+    <Button data-testid="text-button" type="link" style={getStyles()}>{children}</Button>
   );
 }
 
 TextButton.propTypes = {
-  children: PropTypes.number.isRequired,
+  children: PropTypes.node.isRequired,
   weight: PropTypes.string,
   color: PropTypes.string,
   size: PropTypes.string,

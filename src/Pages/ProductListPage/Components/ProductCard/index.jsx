@@ -11,13 +11,12 @@ import styles from './ProductCard.module.scss';
 const { Meta } = Card;
 
 export default function ProductCard({
-  title, desc, price, keyValue, image, onImageLoad, imageLoading,
+  title, desc, price, image, onImageLoad, imageLoading,
 }) {
   return (
     <Card
       hoverable
       className={styles.productCard}
-      key={keyValue}
       cover={(
         <>
           <Shimmer loading={imageLoading} size={220} />
@@ -41,13 +40,11 @@ ProductCard.propTypes = {
   desc: PropTypes.node.isRequired,
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
-  keyValue: PropTypes.node,
   onImageLoad: PropTypes.func,
   imageLoading: PropTypes.bool,
 };
 
 ProductCard.defaultProps = {
-  keyValue: null,
   onImageLoad: () => null,
   imageLoading: false,
 };

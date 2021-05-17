@@ -69,56 +69,55 @@ export default function FilterGroup({
   const productListData = useSelector((state) => _get(state, 'productListReducer', {}));
 
   const getFilterValues = () => _map(filterValues, (item) => (
-    <>
-      <Checkbox
-        onChange={(e) => {
-          /* All the filter key names and their ids are appended into the url and
+    <Checkbox
+      onChange={(e) => {
+        /* All the filter key names and their ids are appended into the url and
             the id is used to enable/disable the checkbox
           */
-          let keys = _get(params, `${getKey(type)}`, '');
-          let filterIDs = _get(params, 'filterIDs', []);
-          filterIDs = _isArray(filterIDs) ? filterIDs : [filterIDs];
+        let keys = _get(params, `${getKey(type)}`, '');
+        let filterIDs = _get(params, 'filterIDs', []);
+        filterIDs = _isArray(filterIDs) ? filterIDs : [filterIDs];
 
-          let updatedparams = { ...params };
-          if (!e.target.checked) {
-            if (!_isArray(keys)) {
-              delete updatedparams[getKey(type)];
-            } else {
-              keys = _remove(keys, (keyVal) => keyVal !== item.name);
-            }
-            if (!_isArray(filterIDs)) {
-              delete updatedparams.filterIDs;
-            } else {
-              filterIDs = _remove(filterIDs, (keyVal) => keyVal !== item.id);
-            }
-            updatedparams = {
-              ...updatedparams,
-              ...(updatedparams[getKey(type)] && { [getKey(type)]: keys }),
-              ...(updatedparams.filterIDs && { filterIDs }),
-            };
+        let updatedparams = { ...params };
+        if (!e.target.checked) {
+          if (!_isArray(keys)) {
+            delete updatedparams[getKey(type)];
           } else {
-            updatedparams = {
-              ...updatedparams,
-              [getKey(type)]: getValue(keys, item),
-              filterIDs: [...filterIDs, item.id],
-            };
+            keys = _remove(keys, (keyVal) => keyVal !== item.name);
           }
+          if (!_isArray(filterIDs)) {
+            delete updatedparams.filterIDs;
+          } else {
+            filterIDs = _remove(filterIDs, (keyVal) => keyVal !== item.id);
+          }
+          updatedparams = {
+            ...updatedparams,
+            ...(updatedparams[getKey(type)] && { [getKey(type)]: keys }),
+            ...(updatedparams.filterIDs && { filterIDs }),
+          };
+        } else {
+          updatedparams = {
+            ...updatedparams,
+            [getKey(type)]: getValue(keys, item),
+            filterIDs: [...filterIDs, item.id],
+          };
+        }
 
-          const qString = queryString.stringify(updatedparams, { arrayFormat: 'comma' });
-          history.push(`/products?${qString}`);
-          if (searchQuery) {
-            dispatch(filterResults(updatedparams, productListData.searchedData));
-          } else {
-            dispatch(filterResults(updatedparams, productListData.allData));
-          }
-        }}
-        key={item.id}
-        checked={_includes(_isArray(params.filterIDs)
-          ? params.filterIDs : [params.filterIDs], _get(item, 'id', null))}
-      >
-        {getFilterValue(type, item)}
-      </Checkbox>
-    </>
+        const qString = queryString.stringify(updatedparams, { arrayFormat: 'comma' });
+        history.push(`/products?${qString}`);
+        if (searchQuery) {
+          dispatch(filterResults(updatedparams, productListData.searchedData));
+        } else {
+          dispatch(filterResults(updatedparams, productListData.allData));
+        }
+      }}
+      data-testid={`checkbox_${item.id}`}
+      key={item.id}
+      checked={_includes(_isArray(params.filterIDs)
+        ? params.filterIDs : [params.filterIDs], _get(item, 'id', null))}
+    >
+      {getFilterValue(type, item)}
+    </Checkbox>
   ));
   return (
     <div className={styles.filterGroup}>
@@ -130,6 +129,7 @@ export default function FilterGroup({
 
 FilterGroup.propTypes = {
   type: PropTypes.string.isRequired,
+  // keyProp: PropTypes.number.isRequired,
   filterValues: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,

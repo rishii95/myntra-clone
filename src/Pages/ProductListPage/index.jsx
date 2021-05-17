@@ -109,7 +109,7 @@ export default function ProductListPage() {
     return (
       <>
         <ProductGrid cardData={productListData.currentData} />
-        <div className={styles.paginationWrapper}>
+        <div className={styles.paginationWrapper} data-testid="pagination">
           <Pagination
             current={currentPage}
             onChange={handlePagination}

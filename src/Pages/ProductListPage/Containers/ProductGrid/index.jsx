@@ -24,7 +24,7 @@ export default function ProductGrid({
 
   const getCards = () => _map(cardData, (item) => (
     <ProductCard
-      keyValue={_get(item, 'id', '')}
+      key={_get(item, 'id', '')}
       title={<Typography ellipsis type="title">{_get(item, 'name', '')}</Typography>}
       desc={(
         <Typography type="subtitle" color={variables.grey} style={{ height: '2.625rem' }}>
