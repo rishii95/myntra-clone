@@ -1,11 +1,7 @@
 import React from 'react';
-// import Typography from './Common/Components/Typography';
-// import Price from './Common/Components/Price';
-// import TextButton from './Common/Components/TextButton';
 import Main from './Pages/Main';
-// import variables from './Common/variables.module.scss';
 import 'antd/dist/antd.css';
-import './App.module.scss';
+import './App.scss';
 
 function App() {
   return (

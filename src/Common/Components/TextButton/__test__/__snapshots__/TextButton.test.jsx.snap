@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it matches snapshot 1`] = `
+<button
+  class="ant-btn ant-btn-link"
+  data-testid="text-button"
+  style="color: pink; font-weight: mediumFont;"
+  type="button"
+>
+  <span>
+    Hello
+  </span>
+</button>
+`;

@@ -1,0 +1,38 @@
+@import "../../variables.module.scss";
+
+.pagination-wrapper {
+    .pagination {
+        .ant-pagination-prev{
+            margin-right: 3rem;
+        }
+        .ant-pagination-next {
+            margin-left: 2rem;
+        }
+        .ant-pagination-item {
+            border: 1px solid transparent;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-right: 0.563rem;
+            padding: 0px 0.313rem;
+            &:hover {
+                border-color: $light-grey;
+                a {
+                    color: $black;
+                }
+            }
+          }
+        .ant-pagination-item-active{
+            a {
+                color: $white;
+            }
+            background-color: $black;
+            border-color: $black;
+            &:hover {
+                border-color: $black;
+                a {
+                    color: $black;
+                }
+            }
+        }
+    }    
+}

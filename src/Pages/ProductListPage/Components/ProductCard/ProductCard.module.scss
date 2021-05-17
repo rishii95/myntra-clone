@@ -1,11 +1,11 @@
 .productCard {
-  width: 13.125rem;
+  width: 13.75rem;
   .cardMeta {
     & > div:first-child {
-      div:not(:last-child){
+      div{
         margin-bottom: 0;
       }
-    } 
+    }
   } 
   .price {
     margin-top: 0.625rem;

@@ -1,0 +1,1244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it matches snapshot 1`] = `
+<main
+  class="ant-layout-content contentWrapper"
+>
+  <section
+    class="ant-layout titleLayout"
+  >
+    <aside
+      class="titleSider"
+    >
+      <h5
+        class="ant-typography"
+        data-testid="typography-title"
+        style="margin-bottom: 0px; color: black; font-weight: boldFont;"
+      >
+        Filters
+      </h5>
+    </aside>
+  </section>
+  <section
+    class="ant-layout layout"
+  >
+    <aside
+      class="siderStyles sider"
+    >
+      <div
+        class="sidebarFilter"
+      >
+        <div
+          class="filterGroup"
+        >
+          <div
+            class="ant-typography subtitle "
+            data-testid="typography-subtitle"
+            style="margin-bottom: 18px; color: black; font-weight: mediumFont;"
+          >
+            Department
+          </div>
+          <div
+            class="filters"
+          >
+            <label
+              class="ant-checkbox-wrapper checkbox"
+            >
+              <span
+                class="ant-checkbox"
+              >
+                <input
+                  class="ant-checkbox-input"
+                  data-testid="checkbox_1"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="ant-checkbox-inner"
+                />
+              </span>
+              <span>
+                Grocery
+              </span>
+            </label>
+            <label
+              class="ant-checkbox-wrapper checkbox"
+            >
+              <span
+                class="ant-checkbox"
+              >
+                <input
+                  class="ant-checkbox-input"
+                  data-testid="checkbox_2"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="ant-checkbox-inner"
+                />
+              </span>
+              <span>
+                Clothing
+              </span>
+            </label>
+            <label
+              class="ant-checkbox-wrapper checkbox"
+            >
+              <span
+                class="ant-checkbox"
+              >
+                <input
+                  class="ant-checkbox-input"
+                  data-testid="checkbox_3"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="ant-checkbox-inner"
+                />
+              </span>
+              <span>
+                Electronics
+              </span>
+            </label>
+            <label
+              class="ant-checkbox-wrapper checkbox"
+            >
+              <span
+                class="ant-checkbox"
+              >
+                <input
+                  class="ant-checkbox-input"
+                  data-testid="checkbox_4"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="ant-checkbox-inner"
+                />
+              </span>
+              <span>
+                Computers
+              </span>
+            </label>
+            <label
+              class="ant-checkbox-wrapper checkbox"
+            >
+              <span
+                class="ant-checkbox"
+              >
+                <input
+                  class="ant-checkbox-input"
+                  data-testid="checkbox_5"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="ant-checkbox-inner"
+                />
+              </span>
+              <span>
+                Movies
+              </span>
+            </label>
+            <label
+              class="ant-checkbox-wrapper checkbox"
+            >
+              <span
+                class="ant-checkbox"
+              >
+                <input
+                  class="ant-checkbox-input"
+                  data-testid="checkbox_12"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="ant-checkbox-inner"
+                />
+              </span>
+              <span>
+                Books
+              </span>
+            </label>
+          </div>
+        </div>
+        <div
+          class="filterGroup"
+        >
+          <div
+            class="ant-typography subtitle "
+            data-testid="typography-subtitle"
+            style="margin-bottom: 18px; color: black; font-weight: mediumFont;"
+          >
+            Color
+          </div>
+          <div
+            class="filters"
+          >
+            <label
+              class="ant-checkbox-wrapper checkbox"
+            >
+              <span
+                class="ant-checkbox"
+              >
+                <input
+                  class="ant-checkbox-input"
+                  data-testid="checkbox_6"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="ant-checkbox-inner"
+                />
+              </span>
+              <span>
+                <div
+                  class="checboxValueWrapper"
+                >
+                  violet
+                  <span
+                    class="colorIcon"
+                    style="background-color: rgb(238, 130, 238);"
+                  />
+                </div>
+              </span>
+            </label>
+            <label
+              class="ant-checkbox-wrapper checkbox"
+            >
+              <span
+                class="ant-checkbox"
+              >
+                <input
+                  class="ant-checkbox-input"
+                  data-testid="checkbox_7"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="ant-checkbox-inner"
+                />
+              </span>
+              <span>
+                <div
+                  class="checboxValueWrapper"
+                >
+                  purple
+                  <span
+                    class="colorIcon"
+                    style="background-color: rgb(128, 0, 128);"
+                  />
+                </div>
+              </span>
+            </label>
+            <label
+              class="ant-checkbox-wrapper checkbox"
+            >
+              <span
+                class="ant-checkbox"
+              >
+                <input
+                  class="ant-checkbox-input"
+                  data-testid="checkbox_8"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="ant-checkbox-inner"
+                />
+              </span>
+              <span>
+                <div
+                  class="checboxValueWrapper"
+                >
+                  salmon
+                  <span
+                    class="colorIcon"
+                    style="background-color: rgb(250, 128, 114);"
+                  />
+                </div>
+              </span>
+            </label>
+            <label
+              class="ant-checkbox-wrapper checkbox"
+            >
+              <span
+                class="ant-checkbox"
+              >
+                <input
+                  class="ant-checkbox-input"
+                  data-testid="checkbox_9"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="ant-checkbox-inner"
+                />
+              </span>
+              <span>
+                <div
+                  class="checboxValueWrapper"
+                >
+                  lavender
+                  <span
+                    class="colorIcon"
+                    style="background-color: rgb(230, 230, 250);"
+                  />
+                </div>
+              </span>
+            </label>
+            <label
+              class="ant-checkbox-wrapper checkbox"
+            >
+              <span
+                class="ant-checkbox"
+              >
+                <input
+                  class="ant-checkbox-input"
+                  data-testid="checkbox_10"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="ant-checkbox-inner"
+                />
+              </span>
+              <span>
+                <div
+                  class="checboxValueWrapper"
+                >
+                  yellow
+                  <span
+                    class="colorIcon"
+                    style="background-color: rgb(255, 255, 0);"
+                  />
+                </div>
+              </span>
+            </label>
+            <label
+              class="ant-checkbox-wrapper checkbox"
+            >
+              <span
+                class="ant-checkbox"
+              >
+                <input
+                  class="ant-checkbox-input"
+                  data-testid="checkbox_11"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="ant-checkbox-inner"
+                />
+              </span>
+              <span>
+                <div
+                  class="checboxValueWrapper"
+                >
+                  grey
+                  <span
+                    class="colorIcon"
+                    style="background-color: rgb(128, 128, 128);"
+                  />
+                </div>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <main
+      class="ant-layout-content content"
+    >
+      <div
+        class="gridWrapper"
+      >
+        <div
+          class="ant-card ant-card-bordered ant-card-hoverable productCard"
+        >
+          <div
+            class="ant-card-cover"
+          >
+            <div
+              class="ant-skeleton ant-skeleton-active"
+            >
+              <div
+                class="ant-skeleton-content"
+              >
+                <h3
+                  class="ant-skeleton-title"
+                  style="width: 38%;"
+                />
+                <ul
+                  class="ant-skeleton-paragraph"
+                >
+                  <li />
+                  <li />
+                  <li
+                    style="width: 61%;"
+                  />
+                </ul>
+              </div>
+            </div>
+            <img
+              alt="product"
+              src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/16/66a74f48-2904-41d1-9832-f7f16da828921615899987024-1.jpg"
+              style="visibility: hidden;"
+            />
+          </div>
+          <div
+            class="ant-card-body"
+          >
+            <div
+              class="ant-card-meta cardMeta"
+            >
+              <div
+                class="ant-card-meta-detail"
+              >
+                <div
+                  class="ant-card-meta-title"
+                >
+                  <h5
+                    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-single-line"
+                    data-testid="typography-title"
+                    style="margin-bottom: 0px; color: black; font-weight: boldFont;"
+                  >
+                    Test Dummy
+                  </h5>
+                </div>
+                <div
+                  class="ant-card-meta-description"
+                >
+                  <div
+                    class="ant-typography subtitle "
+                    data-testid="typography-subtitle"
+                    style="height: 2.625rem;"
+                  >
+                    Lavender Frozen in Grocery
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-typography subtitle price"
+              data-testid="typography-subtitle"
+              style="margin-bottom: 0px; color: black; font-weight: mediumFont;"
+            >
+              Rs 666
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-card ant-card-bordered ant-card-hoverable productCard"
+        >
+          <div
+            class="ant-card-cover"
+          >
+            <div
+              class="ant-skeleton ant-skeleton-active"
+            >
+              <div
+                class="ant-skeleton-content"
+              >
+                <h3
+                  class="ant-skeleton-title"
+                  style="width: 38%;"
+                />
+                <ul
+                  class="ant-skeleton-paragraph"
+                >
+                  <li />
+                  <li />
+                  <li
+                    style="width: 61%;"
+                  />
+                </ul>
+              </div>
+            </div>
+            <img
+              alt="product"
+              src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/16/66a74f48-2904-41d1-9832-f7f16da828921615899987024-1.jpg"
+              style="visibility: hidden;"
+            />
+          </div>
+          <div
+            class="ant-card-body"
+          >
+            <div
+              class="ant-card-meta cardMeta"
+            >
+              <div
+                class="ant-card-meta-detail"
+              >
+                <div
+                  class="ant-card-meta-title"
+                >
+                  <h5
+                    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-single-line"
+                    data-testid="typography-title"
+                    style="margin-bottom: 0px; color: black; font-weight: boldFont;"
+                  >
+                    Sleek Rubber Sausages
+                  </h5>
+                </div>
+                <div
+                  class="ant-card-meta-description"
+                >
+                  <div
+                    class="ant-typography subtitle "
+                    data-testid="typography-subtitle"
+                    style="height: 2.625rem;"
+                  >
+                    Lavender Rubber in Clothing
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-typography subtitle price"
+              data-testid="typography-subtitle"
+              style="margin-bottom: 0px; color: black; font-weight: mediumFont;"
+            >
+              Rs 835
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-card ant-card-bordered ant-card-hoverable productCard"
+        >
+          <div
+            class="ant-card-cover"
+          >
+            <div
+              class="ant-skeleton ant-skeleton-active"
+            >
+              <div
+                class="ant-skeleton-content"
+              >
+                <h3
+                  class="ant-skeleton-title"
+                  style="width: 38%;"
+                />
+                <ul
+                  class="ant-skeleton-paragraph"
+                >
+                  <li />
+                  <li />
+                  <li
+                    style="width: 61%;"
+                  />
+                </ul>
+              </div>
+            </div>
+            <img
+              alt="product"
+              src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/16/66a74f48-2904-41d1-9832-f7f16da828921615899987024-1.jpg"
+              style="visibility: hidden;"
+            />
+          </div>
+          <div
+            class="ant-card-body"
+          >
+            <div
+              class="ant-card-meta cardMeta"
+            >
+              <div
+                class="ant-card-meta-detail"
+              >
+                <div
+                  class="ant-card-meta-title"
+                >
+                  <h5
+                    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-single-line"
+                    data-testid="typography-title"
+                    style="margin-bottom: 0px; color: black; font-weight: boldFont;"
+                  >
+                    Gorgeous Steel Cheese
+                  </h5>
+                </div>
+                <div
+                  class="ant-card-meta-description"
+                >
+                  <div
+                    class="ant-typography subtitle "
+                    data-testid="typography-subtitle"
+                    style="height: 2.625rem;"
+                  >
+                    Yellow Plastic in Clothing
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-typography subtitle price"
+              data-testid="typography-subtitle"
+              style="margin-bottom: 0px; color: black; font-weight: mediumFont;"
+            >
+              Rs 771
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-card ant-card-bordered ant-card-hoverable productCard"
+        >
+          <div
+            class="ant-card-cover"
+          >
+            <div
+              class="ant-skeleton ant-skeleton-active"
+            >
+              <div
+                class="ant-skeleton-content"
+              >
+                <h3
+                  class="ant-skeleton-title"
+                  style="width: 38%;"
+                />
+                <ul
+                  class="ant-skeleton-paragraph"
+                >
+                  <li />
+                  <li />
+                  <li
+                    style="width: 61%;"
+                  />
+                </ul>
+              </div>
+            </div>
+            <img
+              alt="product"
+              src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/16/66a74f48-2904-41d1-9832-f7f16da828921615899987024-1.jpg"
+              style="visibility: hidden;"
+            />
+          </div>
+          <div
+            class="ant-card-body"
+          >
+            <div
+              class="ant-card-meta cardMeta"
+            >
+              <div
+                class="ant-card-meta-detail"
+              >
+                <div
+                  class="ant-card-meta-title"
+                >
+                  <h5
+                    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-single-line"
+                    data-testid="typography-title"
+                    style="margin-bottom: 0px; color: black; font-weight: boldFont;"
+                  >
+                    Licensed Plastic Shoes
+                  </h5>
+                </div>
+                <div
+                  class="ant-card-meta-description"
+                >
+                  <div
+                    class="ant-typography subtitle "
+                    data-testid="typography-subtitle"
+                    style="height: 2.625rem;"
+                  >
+                    Magenta Granite in Jewelery
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-typography subtitle price"
+              data-testid="typography-subtitle"
+              style="margin-bottom: 0px; color: black; font-weight: mediumFont;"
+            >
+              Rs 603
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-card ant-card-bordered ant-card-hoverable productCard"
+        >
+          <div
+            class="ant-card-cover"
+          >
+            <div
+              class="ant-skeleton ant-skeleton-active"
+            >
+              <div
+                class="ant-skeleton-content"
+              >
+                <h3
+                  class="ant-skeleton-title"
+                  style="width: 38%;"
+                />
+                <ul
+                  class="ant-skeleton-paragraph"
+                >
+                  <li />
+                  <li />
+                  <li
+                    style="width: 61%;"
+                  />
+                </ul>
+              </div>
+            </div>
+            <img
+              alt="product"
+              src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/16/66a74f48-2904-41d1-9832-f7f16da828921615899987024-1.jpg"
+              style="visibility: hidden;"
+            />
+          </div>
+          <div
+            class="ant-card-body"
+          >
+            <div
+              class="ant-card-meta cardMeta"
+            >
+              <div
+                class="ant-card-meta-detail"
+              >
+                <div
+                  class="ant-card-meta-title"
+                >
+                  <h5
+                    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-single-line"
+                    data-testid="typography-title"
+                    style="margin-bottom: 0px; color: black; font-weight: boldFont;"
+                  >
+                    Incredible Frozen Pizza
+                  </h5>
+                </div>
+                <div
+                  class="ant-card-meta-description"
+                >
+                  <div
+                    class="ant-typography subtitle "
+                    data-testid="typography-subtitle"
+                    style="height: 2.625rem;"
+                  >
+                    Pink Frozen in Health
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-typography subtitle price"
+              data-testid="typography-subtitle"
+              style="margin-bottom: 0px; color: black; font-weight: mediumFont;"
+            >
+              Rs 385
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-card ant-card-bordered ant-card-hoverable productCard"
+        >
+          <div
+            class="ant-card-cover"
+          >
+            <div
+              class="ant-skeleton ant-skeleton-active"
+            >
+              <div
+                class="ant-skeleton-content"
+              >
+                <h3
+                  class="ant-skeleton-title"
+                  style="width: 38%;"
+                />
+                <ul
+                  class="ant-skeleton-paragraph"
+                >
+                  <li />
+                  <li />
+                  <li
+                    style="width: 61%;"
+                  />
+                </ul>
+              </div>
+            </div>
+            <img
+              alt="product"
+              src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/16/66a74f48-2904-41d1-9832-f7f16da828921615899987024-1.jpg"
+              style="visibility: hidden;"
+            />
+          </div>
+          <div
+            class="ant-card-body"
+          >
+            <div
+              class="ant-card-meta cardMeta"
+            >
+              <div
+                class="ant-card-meta-detail"
+              >
+                <div
+                  class="ant-card-meta-title"
+                >
+                  <h5
+                    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-single-line"
+                    data-testid="typography-title"
+                    style="margin-bottom: 0px; color: black; font-weight: boldFont;"
+                  >
+                    Intelligent Granite Towels
+                  </h5>
+                </div>
+                <div
+                  class="ant-card-meta-description"
+                >
+                  <div
+                    class="ant-typography subtitle "
+                    data-testid="typography-subtitle"
+                    style="height: 2.625rem;"
+                  >
+                    Sky blue Frozen in Music
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-typography subtitle price"
+              data-testid="typography-subtitle"
+              style="margin-bottom: 0px; color: black; font-weight: mediumFont;"
+            >
+              Rs 155
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-card ant-card-bordered ant-card-hoverable productCard"
+        >
+          <div
+            class="ant-card-cover"
+          >
+            <div
+              class="ant-skeleton ant-skeleton-active"
+            >
+              <div
+                class="ant-skeleton-content"
+              >
+                <h3
+                  class="ant-skeleton-title"
+                  style="width: 38%;"
+                />
+                <ul
+                  class="ant-skeleton-paragraph"
+                >
+                  <li />
+                  <li />
+                  <li
+                    style="width: 61%;"
+                  />
+                </ul>
+              </div>
+            </div>
+            <img
+              alt="product"
+              src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/16/66a74f48-2904-41d1-9832-f7f16da828921615899987024-1.jpg"
+              style="visibility: hidden;"
+            />
+          </div>
+          <div
+            class="ant-card-body"
+          >
+            <div
+              class="ant-card-meta cardMeta"
+            >
+              <div
+                class="ant-card-meta-detail"
+              >
+                <div
+                  class="ant-card-meta-title"
+                >
+                  <h5
+                    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-single-line"
+                    data-testid="typography-title"
+                    style="margin-bottom: 0px; color: black; font-weight: boldFont;"
+                  >
+                    Generic Concrete Shirt
+                  </h5>
+                </div>
+                <div
+                  class="ant-card-meta-description"
+                >
+                  <div
+                    class="ant-typography subtitle "
+                    data-testid="typography-subtitle"
+                    style="height: 2.625rem;"
+                  >
+                    Grey Metal in Music
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-typography subtitle price"
+              data-testid="typography-subtitle"
+              style="margin-bottom: 0px; color: black; font-weight: mediumFont;"
+            >
+              Rs 419
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-card ant-card-bordered ant-card-hoverable productCard"
+        >
+          <div
+            class="ant-card-cover"
+          >
+            <div
+              class="ant-skeleton ant-skeleton-active"
+            >
+              <div
+                class="ant-skeleton-content"
+              >
+                <h3
+                  class="ant-skeleton-title"
+                  style="width: 38%;"
+                />
+                <ul
+                  class="ant-skeleton-paragraph"
+                >
+                  <li />
+                  <li />
+                  <li
+                    style="width: 61%;"
+                  />
+                </ul>
+              </div>
+            </div>
+            <img
+              alt="product"
+              src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/16/66a74f48-2904-41d1-9832-f7f16da828921615899987024-1.jpg"
+              style="visibility: hidden;"
+            />
+          </div>
+          <div
+            class="ant-card-body"
+          >
+            <div
+              class="ant-card-meta cardMeta"
+            >
+              <div
+                class="ant-card-meta-detail"
+              >
+                <div
+                  class="ant-card-meta-title"
+                >
+                  <h5
+                    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-single-line"
+                    data-testid="typography-title"
+                    style="margin-bottom: 0px; color: black; font-weight: boldFont;"
+                  >
+                    Handcrafted Frozen Tuna
+                  </h5>
+                </div>
+                <div
+                  class="ant-card-meta-description"
+                >
+                  <div
+                    class="ant-typography subtitle "
+                    data-testid="typography-subtitle"
+                    style="height: 2.625rem;"
+                  >
+                    Salmon Frozen in Jewelery
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-typography subtitle price"
+              data-testid="typography-subtitle"
+              style="margin-bottom: 0px; color: black; font-weight: mediumFont;"
+            >
+              Rs 969
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-card ant-card-bordered ant-card-hoverable productCard"
+        >
+          <div
+            class="ant-card-cover"
+          >
+            <div
+              class="ant-skeleton ant-skeleton-active"
+            >
+              <div
+                class="ant-skeleton-content"
+              >
+                <h3
+                  class="ant-skeleton-title"
+                  style="width: 38%;"
+                />
+                <ul
+                  class="ant-skeleton-paragraph"
+                >
+                  <li />
+                  <li />
+                  <li
+                    style="width: 61%;"
+                  />
+                </ul>
+              </div>
+            </div>
+            <img
+              alt="product"
+              src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/16/66a74f48-2904-41d1-9832-f7f16da828921615899987024-1.jpg"
+              style="visibility: hidden;"
+            />
+          </div>
+          <div
+            class="ant-card-body"
+          >
+            <div
+              class="ant-card-meta cardMeta"
+            >
+              <div
+                class="ant-card-meta-detail"
+              >
+                <div
+                  class="ant-card-meta-title"
+                >
+                  <h5
+                    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-single-line"
+                    data-testid="typography-title"
+                    style="margin-bottom: 0px; color: black; font-weight: boldFont;"
+                  >
+                    Handmade Wooden Tuna
+                  </h5>
+                </div>
+                <div
+                  class="ant-card-meta-description"
+                >
+                  <div
+                    class="ant-typography subtitle "
+                    data-testid="typography-subtitle"
+                    style="height: 2.625rem;"
+                  >
+                    Azure Rubber in Home
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-typography subtitle price"
+              data-testid="typography-subtitle"
+              style="margin-bottom: 0px; color: black; font-weight: mediumFont;"
+            >
+              Rs 422
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-card ant-card-bordered ant-card-hoverable productCard"
+        >
+          <div
+            class="ant-card-cover"
+          >
+            <div
+              class="ant-skeleton ant-skeleton-active"
+            >
+              <div
+                class="ant-skeleton-content"
+              >
+                <h3
+                  class="ant-skeleton-title"
+                  style="width: 38%;"
+                />
+                <ul
+                  class="ant-skeleton-paragraph"
+                >
+                  <li />
+                  <li />
+                  <li
+                    style="width: 61%;"
+                  />
+                </ul>
+              </div>
+            </div>
+            <img
+              alt="product"
+              src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/3/16/66a74f48-2904-41d1-9832-f7f16da828921615899987024-1.jpg"
+              style="visibility: hidden;"
+            />
+          </div>
+          <div
+            class="ant-card-body"
+          >
+            <div
+              class="ant-card-meta cardMeta"
+            >
+              <div
+                class="ant-card-meta-detail"
+              >
+                <div
+                  class="ant-card-meta-title"
+                >
+                  <h5
+                    class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-single-line"
+                    data-testid="typography-title"
+                    style="margin-bottom: 0px; color: black; font-weight: boldFont;"
+                  >
+                    Generic Steel Bike
+                  </h5>
+                </div>
+                <div
+                  class="ant-card-meta-description"
+                >
+                  <div
+                    class="ant-typography subtitle "
+                    data-testid="typography-subtitle"
+                    style="height: 2.625rem;"
+                  >
+                    Violet Soft in Grocery
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-typography subtitle price"
+              data-testid="typography-subtitle"
+              style="margin-bottom: 0px; color: black; font-weight: mediumFont;"
+            >
+              Rs 576
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="paginationWrapper"
+        data-testid="pagination"
+      >
+        <div
+          class="pagination-wrapper"
+        >
+          <ul
+            class="ant-pagination pagination"
+            unselectable="unselectable"
+          >
+            <li
+              aria-disabled="true"
+              class="ant-pagination-prev ant-pagination-disabled"
+              title="Previous Page"
+            >
+              <button
+                class="ant-pagination-item-link"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  aria-label="left"
+                  class="anticon anticon-left"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="left"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+              tabindex="0"
+              title="1"
+            >
+              <a
+                rel="nofollow"
+              >
+                1
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-2"
+              tabindex="0"
+              title="2"
+            >
+              <a
+                rel="nofollow"
+              >
+                2
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-3"
+              tabindex="0"
+              title="3"
+            >
+              <a
+                rel="nofollow"
+              >
+                3
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-4"
+              tabindex="0"
+              title="4"
+            >
+              <a
+                rel="nofollow"
+              >
+                4
+              </a>
+            </li>
+            <li
+              class="ant-pagination-item ant-pagination-item-5"
+              tabindex="0"
+              title="5"
+            >
+              <a
+                rel="nofollow"
+              >
+                5
+              </a>
+            </li>
+            <li
+              aria-disabled="false"
+              class="ant-pagination-next"
+              tabindex="0"
+              title="Next Page"
+            >
+              <button
+                class="ant-pagination-item-link"
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  aria-label="right"
+                  class="anticon anticon-right"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="right"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </section>
+</main>
+`;
