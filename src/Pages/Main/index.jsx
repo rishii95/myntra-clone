@@ -8,6 +8,8 @@ import ProductListPage from '../ProductListPage';
 import Header from '../../Common/Components/Header';
 import Fallback from '../../Common/Components/Fallback';
 
+import { ERROR_STATES } from '../../Common/constants';
+
 import styles from './Main.module.scss';
 
 export default function Main() {
@@ -23,7 +25,7 @@ export default function Main() {
             <ProductListPage />
           </Route>
           <Route>
-            <Fallback state="404" />
+            <Fallback state={ERROR_STATES.NOT_FOUND} />
           </Route>
         </Switch>
       </BrowserRouter>

@@ -6,45 +6,47 @@ import { Typography as TypographyAnt } from 'antd';
 import variables from '../../variables.module.scss';
 
 import TypographyStyles from './Typography.module.scss';
+import { TYPOGRAPHY_TYPES } from '../../constants';
 
 const { Title, Paragraph, Text } = TypographyAnt;
 
-export default function Typography({
-  children, type, color, weight, className, marginBottom, ...props
-}) {
+export default function Typography(props) {
+  const {
+    children, type, color, weight, className, marginBottom, ...rest
+  } = props;
   const getStyles = () => ({ marginBottom, color, fontWeight: weight });
   const getElement = () => {
     switch (type) {
-      case 'title':
+      case TYPOGRAPHY_TYPES.TITLE:
         return (
           <Title
             level={5}
             data-testid="typography-title"
             style={{ ...getStyles(), fontWeight: variables.boldFont }}
             className={className}
-            {...props}
+            {...rest}
           >
             {children}
           </Title>
         );
-      case 'subtitle':
+      case TYPOGRAPHY_TYPES.SUBTITLE:
         return (
           <Paragraph
             className={`${TypographyStyles.subtitle} ${className}`}
             style={getStyles()}
             data-testid="typography-subtitle"
-            {...props}
+            {...rest}
           >
             {children}
           </Paragraph>
         );
-      case 'text':
+      case TYPOGRAPHY_TYPES.TEXT:
         return (
           <Text
             className={`${TypographyStyles.text} ${className}`}
             data-testid="typography-text"
             style={getStyles()}
-            {...props}
+            {...rest}
           >
             {children}
           </Text>
@@ -59,7 +61,7 @@ export default function Typography({
 
 Typography.propTypes = {
   children: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['title', 'text', 'subtitle']).isRequired,
+  type: PropTypes.oneOf(TYPOGRAPHY_TYPES).isRequired,
   color: PropTypes.string,
   weight: PropTypes.string,
   className: PropTypes.string,

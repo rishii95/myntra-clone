@@ -3,6 +3,8 @@ import { PropTypes } from 'prop-types';
 
 import Fallback from '../Fallback';
 
+import { ERROR_STATES } from '../../constants';
+
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +25,7 @@ class ErrorBoundary extends React.Component {
     const { children } = this.props;
 
     if (hasError) {
-      return <Fallback state="500" />;
+      return <Fallback state={ERROR_STATES.ERROR} />;
     }
 
     return children;

@@ -9,6 +9,7 @@ import Typography from '../../../../Common/Components/Typography';
 
 import variables from '../../../../Common/variables.module.scss';
 import styles from './ProductGrid.module.scss';
+import { TYPOGRAPHY_TYPES } from '../../../../Common/constants';
 
 export default function ProductGrid({
   cardData,
@@ -25,9 +26,9 @@ export default function ProductGrid({
   const getCards = () => _map(cardData, (item) => (
     <ProductCard
       key={_get(item, 'id', '')}
-      title={<Typography ellipsis type="title">{_get(item, 'name', '')}</Typography>}
+      title={<Typography ellipsis type={TYPOGRAPHY_TYPES.TITLE}>{_get(item, 'name', '')}</Typography>}
       desc={(
-        <Typography type="subtitle" color={variables.grey} style={{ height: '2.625rem' }}>
+        <Typography type={TYPOGRAPHY_TYPES.SUBTITLE} color={variables.grey} style={{ height: '2.625rem' }}>
           {`${_upperFirst(_get(item, 'color', ''))} ${_get(item, 'desc', '')} in ${_get(item, 'dept', '')}`}
         </Typography>
 )}

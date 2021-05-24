@@ -12,9 +12,10 @@ const {
   Header: HeaderAntd,
 } = Layout;
 
+const headerStyle = { background: variables.white, height: '5rem' };
 export default function Header() {
   return (
-    <HeaderAntd style={{ background: variables.white, height: '5rem' }} className={styles.header}>
+    <HeaderAntd style={headerStyle} className={styles.header}>
       <img src={logo} alt="logo" className={styles.logo} />
       <SearchBox />
     </HeaderAntd>

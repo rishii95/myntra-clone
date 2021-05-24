@@ -20,3 +20,14 @@ export const FILTERS = [
     ],
   },
 ];
+export const ERROR_STATES = {
+  EMPTY: 'Empty',
+  LOADING: 'Loading',
+  NOT_FOUND: '404',
+  ERROR: '500',
+};
+export const TYPOGRAPHY_TYPES = {
+  TITLE: 'title',
+  SUBTITLE: 'subtitle',
+  TEXT: 'text',
+};

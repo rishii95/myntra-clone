@@ -3,9 +3,10 @@ import { PropTypes } from 'prop-types';
 import { Button } from 'antd';
 import variables from '../../variables.module.scss';
 
-export default function TextButton({
-  children, weight, color, size,
-}) {
+export default function TextButton(props) {
+  const {
+    children, weight, color, size,
+  } = props;
   const getStyles = () => ({ color, fontWeight: weight, fontSize: size });
   return (
     <Button data-testid="text-button" type="link" style={getStyles()}>{children}</Button>

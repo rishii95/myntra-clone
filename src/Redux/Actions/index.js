@@ -1,11 +1,9 @@
-import {
-  SET_PRODUCT_LIST, GET_STORED_PRODUCT_LIST, GET_SEARCH_RESULTS, FILTER_RESULTS,
-} from '../Types';
+import * as ActionTypes from '../Types';
 import fetchProductList from '../../Pages/ProductListPage/Services';
 
 export const setProductListData = (data, page) => (dispatch) => (
   dispatch({
-    type: SET_PRODUCT_LIST,
+    type: ActionTypes.SET_PRODUCT_LIST,
     payload: {
       data,
       page,
@@ -15,7 +13,7 @@ export const setProductListData = (data, page) => (dispatch) => (
 
 export const getStoredProductData = (page, referenceData) => (dispatch) => (
   dispatch({
-    type: GET_STORED_PRODUCT_LIST,
+    type: ActionTypes.GET_STORED_PRODUCT_LIST,
     payload: {
       page,
       referenceData,
@@ -25,7 +23,7 @@ export const getStoredProductData = (page, referenceData) => (dispatch) => (
 
 export const getSearchResults = (params) => (dispatch) => (
   dispatch({
-    type: GET_SEARCH_RESULTS,
+    type: ActionTypes.GET_SEARCH_RESULTS,
     payload: {
       params,
     },
@@ -34,7 +32,7 @@ export const getSearchResults = (params) => (dispatch) => (
 
 export const filterResults = (params, referenceData) => (dispatch) => (
   dispatch({
-    type: FILTER_RESULTS,
+    type: ActionTypes.FILTER_RESULTS,
     payload: {
       params,
       referenceData,

@@ -16,6 +16,7 @@ import Checkbox from '../../../../Common/Components/Checkbox';
 
 import variables from '../../../../Common/variables.module.scss';
 import styles from './FilterGroup.module.scss';
+import { TYPOGRAPHY_TYPES } from '../../../../Common/constants';
 
 const queryString = require('query-string');
 
@@ -121,7 +122,14 @@ export default function FilterGroup({
   ));
   return (
     <div className={styles.filterGroup}>
-      <Typography type="subtitle" marginBottom={18} weight={variables.mediumFont}>{type}</Typography>
+      <Typography
+        type={TYPOGRAPHY_TYPES.SUBTITLE}
+        marginBottom={18}
+        weight={variables.mediumFont}
+      >
+        {type}
+
+      </Typography>
       <div className={styles.filters}>{getFilterValues()}</div>
     </div>
   );

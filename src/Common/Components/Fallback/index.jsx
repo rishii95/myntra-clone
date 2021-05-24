@@ -3,34 +3,31 @@ import { Result, Empty } from 'antd';
 import { PropTypes } from 'prop-types';
 import styles from './Fallback.module.scss';
 import Loader from '../Loader';
+import { ERROR_STATES } from '../../constants';
+import FallbackConstants from './Fallback.constants';
 
+const getResult = (state, title, subtitle) => (
+  <div className={styles.resultWrapper}>
+    <Result
+      status={state}
+      title={title}
+      subTitle={subtitle}
+    />
+  </div>
+);
 export default function Fallback({ state }) {
   const getState = () => {
     switch (state) {
-      case 'Empty':
+      case ERROR_STATES.EMPTY:
         return <Empty />;
-      case 'Loading':
+      case ERROR_STATES.LOADING:
         return <Loader />;
-      case '404':
-        return (
-          <div className={styles.resultWrapper}>
-            <Result
-              status={state}
-              title="404"
-              subTitle="Sorry, the page you visited does not exist."
-            />
-          </div>
-        );
-      case '500':
-        return (
-          <div className={styles.resultWrapper}>
-            <Result
-              status={state}
-              title="Oops"
-              subTitle="Sorry, something went wrong. Please try again."
-            />
-          </div>
-        );
+      case ERROR_STATES.NOT_FOUND:
+        return getResult(state, FallbackConstants.NOT_FOUND_TITLE,
+          FallbackConstants.NOT_FOUND_SUBTITLE);
+      case ERROR_STATES.ERROR:
+        return getResult(state, FallbackConstants.ERROR_TITLE,
+          FallbackConstants.ERROR_SUBTITLE);
       default:
         return <Empty />;
     }
@@ -39,5 +36,5 @@ export default function Fallback({ state }) {
 }
 
 Fallback.propTypes = {
-  state: PropTypes.oneOf(['Empty', '404', 'Loading', '500']).isRequired,
+  state: PropTypes.oneOf(ERROR_STATES).isRequired,
 };

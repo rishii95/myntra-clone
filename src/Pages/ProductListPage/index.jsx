@@ -13,7 +13,9 @@ import Fallback from '../../Common/Components/Fallback';
 import ProductGrid from './Containers/ProductGrid';
 import SidebarFilters from './Containers/SidebarFilters';
 
-import { FILTERS, PAGE_SIZE, TOTAL_PAGES } from '../../Common/constants';
+import {
+  ERROR_STATES, FILTERS, PAGE_SIZE, TOTAL_PAGES, TYPOGRAPHY_TYPES,
+} from '../../Common/constants';
 import {
   fetchProductListData, getStoredProductData, getSearchResults, fetchDataAndGetSearchResults,
   fetchDataAndFilterResults, fetchDataAndSearchAndFilterResults,
@@ -101,10 +103,10 @@ export default function ProductListPage() {
 
   const getData = () => {
     if (!productListData.currentData) {
-      return <Fallback state="Loading" />;
+      return <Fallback state={ERROR_STATES.LOADING} />;
     }
     if (_isEmpty(productListData.currentData)) {
-      return <Fallback state="Empty" />;
+      return <Fallback state={ERROR_STATES.EMPTY} />;
     }
     return (
       <>
@@ -123,7 +125,14 @@ export default function ProductListPage() {
   return (
     <Content className={styles.contentWrapper}>
       <Layout className={styles.titleLayout}>
-        <aside className={styles.titleSider}><Typography type="title">Filters</Typography></aside>
+        <aside className={styles.titleSider}>
+          <Typography
+            type={TYPOGRAPHY_TYPES.TITLE}
+          >
+            Filters
+          </Typography>
+
+        </aside>
       </Layout>
       <Layout className={styles.layout}>
         <Sider className={styles.sider}>

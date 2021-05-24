@@ -10,6 +10,8 @@ import {
 import styles from './SearchBox.module.scss';
 import variables from '../../variables.module.scss';
 
+const OutlinedStyle = { color: variables.grey };
+
 function SearchBox() {
   const [query, setQuery] = useState('');
   const history = useHistory();
@@ -23,6 +25,14 @@ function SearchBox() {
     history.push('/');
     setQuery('');
   };
+  const onKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+  const onChange = (e) => {
+    setQuery(_get(e, 'target.value', ''));
+  };
   return (
     <div className={styles.searchBoxWrapper}>
       <button
@@ -32,19 +42,15 @@ function SearchBox() {
       >
         <SearchOutlined
           className={styles.searchIcon}
-          style={{ color: variables.grey }}
+          style={OutlinedStyle}
         />
       </button>
       <input
         placeholder="Search for all products"
         value={query}
         type="search"
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') {
-            handleSearch();
-          }
-        }}
-        onChange={(e) => setQuery(_get(e, 'target.value', ''))}
+        onKeyDown={onKeyDown}
+        onChange={onChange}
         className={styles.searchInput}
         aria-label="Search for products"
 
@@ -55,7 +61,7 @@ function SearchBox() {
         className={styles.closeIcon}
         onClick={handleClear}
       >
-        <CloseCircleOutlined style={{ color: variables.grey }} />
+        <CloseCircleOutlined style={OutlinedStyle} />
       </button>
       )}
     </div>
